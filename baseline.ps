@@ -4,10 +4,11 @@ sudo mkswap /swapfile
 sudo swapon /swapfile
 echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
 sudo swapon --show
-free -h
 sudo apt update -y 
 sudo apt upgrade -y
-sudo snap install docker
 sudo groupadd docker
+sudo snap install docker
 sudo usermod -aG docker $USER
 newgrp docker
+free -h
+docker run hello-world
